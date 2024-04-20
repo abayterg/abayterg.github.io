@@ -1,0 +1,66 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="cost-calculator">
+        <h1>Visa Hunter</h1>
+        <h1>Calculadora de costos de citas</h1>
+        <!-- Consulates Selection -->
+        <div id="consulates-panel">
+            <h2>Consulado</h2>
+            <div class="selectable" data-value="Ciudad Juarez">Ciudad Juarez</div>
+            <div class="selectable" data-value="Guadalajara">Guadalajara</div>
+            <div class="selectable" data-value="Hermosillo">Hermosillo</div>
+            <div class="selectable" data-value="Matamoros">Matamoros</div>
+            <div class="selectable" data-value="Merida">Merida</div>
+            <div class="selectable" data-value="Mexico">Mexico</div>
+            <div class="selectable" data-value="Monterrey">Monterrey</div>
+            <div class="selectable" data-value="Nogales">Nogales</div>
+            <div class="selectable" data-value="Nuevo Laredo">Nuevo Laredo</div>
+            <div class="selectable" data-value="Tijuana">Tijuana</div>
+        </div>
+        <!-- CAS Offices Selection -->
+        <div id="cas-offices-panel">
+            <h2>CAS</h2>
+            <div class="selectable" data-value="Ciudad Juarez">Ciudad Juarez</div>
+            <div class="selectable" data-value="Guadalajara">Guadalajara</div>
+            <div class="selectable" data-value="Hermosillo">Hermosillo</div>
+            <div class="selectable" data-value="Matamoros">Matamoros</div>
+            <div class="selectable" data-value="Merida">Merida</div>
+            <div class="selectable" data-value="Mexico">Mexico</div>
+            <div class="selectable" data-value="Monterrey">Monterrey</div>
+            <div class="selectable" data-value="Nogales">Nogales</div>
+            <div class="selectable" data-value="Nuevo Laredo">Nuevo Laredo</div>
+            <div class="selectable" data-value="Tijuana">Tijuana</div>
+        </div>
+        <!-- Month Selection -->
+        <h2>Mes maximo</h2>
+        <select id="month-selection">
+            
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+        </select>
+        <!-- Combination Selection -->
+        <h2>Permitir combinaciones de consulado-CAS?</h2>
+        <select id="combination-selection">
+            <option value="no">No</option>
+            <option value="yes">Si</option>
+            <span></span>
+        </select>
+        <!-- Display Calculated Cost -->
+        <div id="calculated-cost">Costo calculado: $0</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
