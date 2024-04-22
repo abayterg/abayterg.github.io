@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const managerCode = managerCodeInput.value.trim();
         
         let cost = calculateCost(selectedConsulates, selectedCAS, monthDifference, combinations, peopleCount, managerCode);
-        costDisplay.textContent = 'Calculated Cost: $' + cost;
+        costDisplay.textContent = 'Costo calculado por persona: $' + cost;
     }
 
     function calculateCost(B1, B2, B3, combinations, peopleCount, managerCode) {
@@ -28,19 +28,24 @@ document.addEventListener('DOMContentLoaded', function() {
         // Discounts based on people count
         switch(peopleCount) {
             case '1': discount += 0; break; // No discount
-            case '2': discount += 5; break;  // 5% discount
-            case '3': discount += 10; break; // 10% discount
-            case '4': discount += 15; break; // 15% discount
-            case '5+': discount += 20; break; // 20% discount
+            case '2': discount += 35; break;  // 5% discount
+            case '3': discount += 40; break; // 10% discount
+            case '4': discount += 45; break; // 15% discount
         }
+        
+          // Apply discounts
+        baseCost *= (1 - discount / 100);
 
         // Additional discount for specific manager code
         if (managerCode === 'SOYGESTORVISAHUNTER') {
-            discount += 10; // Additional 10% discount
+           
+
+            // Dynamic discount based on cost before manager code
+            discount = baseCost < 1200 ? 25 : 35;
+            baseCost *= (1 - discount / 100);
         }
 
-        // Apply discounts
-        baseCost *= (1 - discount / 100);
+      
 
         return 50 * Math.round(baseCost / 50);
     }
