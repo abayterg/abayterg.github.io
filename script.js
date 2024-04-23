@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Discounts based on people count
         switch(peopleCount) {
             case '1': discount += 0; break; // No discount
-            case '2': discount += 35; break;  // 5% discount
-            case '3': discount += 40; break; // 10% discount
-            case '4': discount += 45; break; // 15% discount
+            case '2': discount += 30; break;  // 5% discount
+            case '3': discount += 35; break; // 10% discount
+            case '4': discount += 40; break; // 15% discount
         }
         
           // Apply discounts
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
            
 
             // Dynamic discount based on cost before manager code
-            discount = baseCost < 1200 ? 25 : 35;
+            discount = baseCost < 1200 ? 20 : 35;
             baseCost *= (1 - discount / 100);
         }
 
