@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
            
 
             // Dynamic discount based on cost before manager code
-            discount = baseCost < 1200 ? 20 : 35;
+            discount = baseCost < 1300 ? 20 : 30;
             baseCost *= (1 - discount / 100);
         }
 
