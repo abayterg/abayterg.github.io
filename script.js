@@ -37,11 +37,18 @@ document.addEventListener('DOMContentLoaded', function() {
         baseCost *= (1 - discount / 100);
 
         // Additional discount for specific manager code
-        if (managerCode === 'SOYGESTORVISAHUNTER') {
+        if (managerCode === 'VISAHUNTERGESTOR') {
            
 
             // Dynamic discount based on cost before manager code
-            discount = baseCost < 1300 ? 20 : 35;
+            discount = baseCost < 1300 ? 25 : 35;
+            baseCost *= (1 - discount / 100);
+        }
+        if (managerCode === 'GESTOR') {
+           
+
+            // Dynamic discount based on cost before manager code
+            discount = baseCost < 1300 ? 15 : 20;
             baseCost *= (1 - discount / 100);
         }
 
