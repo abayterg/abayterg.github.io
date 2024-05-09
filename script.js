@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Discounts based on people count
         switch(peopleCount) {
             case '1': discount += 0; break; // No discount
-            case '2': discount += 30; break;  // 5% discount
-            case '3': discount += 35; break; // 10% discount
-            case '4': discount += 40; break; // 15% discount
+            case '2': discount += 20; break;  // 5% discount
+            case '3': discount += 25; break; // 10% discount
+            case '4': discount += 30; break; // 15% discount
         }
         
           // Apply discounts
