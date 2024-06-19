@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const consulatePanel = document.getElementById('consulates-panel');
     const casPanel = document.getElementById('cas-offices-panel');
     const monthSelect = document.getElementById('month-selection');
-    const combinationSelect = document.getElementById('combination-selection');
     const peopleCountSelect = document.getElementById('people-count');
     const managerCodeInput = document.getElementById('manager-code');
     const costDisplay = document.getElementById('calculated-cost');
@@ -12,17 +11,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedConsulates = consulatePanel.querySelectorAll('.selected').length;
         const selectedCAS = casPanel.querySelectorAll('.selected').length;
         const monthDifference = getMonthDifference(monthSelect.value);
-        const combinations = combinationSelect.value === 'yes' ? selectedConsulates * selectedCAS : 0;
         const peopleCount = peopleCountSelect.value;
         const managerCode = managerCodeInput.value.trim();
         
-        let cost = calculateCost(selectedConsulates, selectedCAS, monthDifference, combinations, peopleCount, managerCode);
+        let cost = calculateCost(selectedConsulates, selectedCAS, monthDifference, peopleCount, managerCode);
         costDisplay.textContent = 'Costo calculado por persona: $' + cost;
     }
 
-    function calculateCost(B1, B2, B3, combinations, peopleCount, managerCode) {
+    function calculateCost(B1, B2, B3, peopleCount, managerCode) {
         if (B1 === 0 || B2 === 0) return 0;
-        let baseCost = (250 / B1) + (200 / B2) - (40 * B3) - (5 * combinations) + 1800;
+        let baseCost = (250 / B1) + (200 / B2) - (40 * B3) + 1800;
         let discount = 0;
 
         // Discounts based on people count
