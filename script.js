@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     monthSelect.addEventListener('change', updateCostCalculation);
-    combinationSelect.addEventListener('change', updateCostCalculation);
     peopleCountSelect.addEventListener('change', updateCostCalculation);
     managerCodeInput.addEventListener('input', updateCostCalculation);
 });
