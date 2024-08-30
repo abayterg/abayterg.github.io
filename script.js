@@ -49,6 +49,13 @@ document.addEventListener('DOMContentLoaded', function() {
             discount = baseCost < 1450 ? 15 : 20;
             baseCost *= (1 - discount / 100);
         }
+        if (managerCode === 'PROMOABRIL2025') {
+           
+
+            // Dynamic discount based on cost before manager code
+            discount = baseCost < 1450 ? 40 : 40;
+            baseCost *= (1 - discount / 100);
+        }        
 
       
 
