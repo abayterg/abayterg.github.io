@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function getMonthDifference(targetMonth) {
-        const monthMapping = { 'August': 8, 'September': 9, 'October': 10, 'November': 11, 'December': 12 };
+        const monthMapping = { 'January': 13, 'February': 14, 'March': 15, 'April': 16, 'December': 12 };
         const currentMonth = new Date().getMonth() + 1;
         return Math.max(0, monthMapping[targetMonth] - currentMonth);
     }
