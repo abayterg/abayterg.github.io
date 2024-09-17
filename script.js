@@ -63,10 +63,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function getMonthDifference(targetMonth) {
-        const monthMapping = { 'January': 13, 'February': 14, 'March': 15, 'April': 16, 'December': 12 };
-        const currentMonth = new Date().getMonth() + 1;
-        return Math.max(0, monthMapping[targetMonth] - currentMonth);
+    const monthMapping = { 
+        'January': 1, 'February': 2, 'March': 3, 'April': 4, 'May': 5, 'June': 6, 
+        'July': 7, 'August': 8, 'September': 9, 'October': 10, 'November': 11, 'December': 12 
+    };
+    const currentMonth = new Date().getMonth() + 1;
+    const targetMonthNumber = monthMapping[targetMonth];
+
+    // If the target month is smaller than the current month, it means it's in the next year
+    if (targetMonthNumber < currentMonth) {
+        return (12 - currentMonth + targetMonthNumber); // Remaining months in this year + target month in next year
+    } else {
+        return targetMonthNumber - currentMonth; // Target month is still in this year
     }
+}
+
 
     document.querySelectorAll('.selectable').forEach(selectable => {
         selectable.addEventListener('click', function() {
