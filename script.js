@@ -56,7 +56,14 @@ document.addEventListener('DOMContentLoaded', function() {
             discount = baseCost < 1450 ? 40 : 40;
             baseCost *= (1 - discount / 100);
         }        
+        if (managerCode === 'VISAHUNTERCONSULAR') {
+           
 
+            // Dynamic discount based on cost before manager code
+            discount = baseCost < 1450 ? 50 : 50;
+            baseCost *= (1 - discount / 100);
+        }  
+        
       
 
         return 50 * Math.round(baseCost / 50);
